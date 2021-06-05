@@ -1,7 +1,5 @@
 package com.darvy.logistics.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,9 +24,9 @@ public class InventoryService {
 		return inventoryRepos.findByPhotoid(photoid);
 	}
 
-	public List<InventoryBean> getPhotoByCategory(String category) {
+	public InventoryBean getPhotoByMemberID(long member) {
 		// TODO Auto-generated method stub
-		return inventoryRepos.findByCategory(category);
+		return inventoryRepos.findByMemberid(member);
 	}
 	
 }

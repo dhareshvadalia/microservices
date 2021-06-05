@@ -19,7 +19,7 @@ public class InventoryBean {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long photoid;
 	private String category;
-	private String owner;
-	private String value;
+	private long memberid;
+	private long value;
 	private String dimension;
 }

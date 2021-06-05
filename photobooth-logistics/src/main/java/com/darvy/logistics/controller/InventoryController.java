@@ -1,5 +1,7 @@
 package com.darvy.logistics.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,8 +24,13 @@ public class InventoryController {
 		return inventoryServ.savePhoto(photobean);
 	}
 	
-	@GetMapping("/{id}")
-	public InventoryBean getPhotoByID(@PathVariable("id") long photoid) {
+	@GetMapping("/photo/{id}")
+	public InventoryBean getFromInvetoryByID(@PathVariable("id") long photoid) {
 		return inventoryServ.getPhotoByID(photoid);
+	}
+	
+	@GetMapping("/category/{category}")
+	public List<InventoryBean> getFromInvetoryByCategory(@PathVariable("category") String category) {
+		return inventoryServ.getPhotoByCategory(category);
 	}
 }
